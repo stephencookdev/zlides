@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import classNames from "classnames";
-import styles from "./styles.scss"; // TODO stephen we need a way to do styling
+import { useStyles } from "./styles";
 
-export default ({ children, title }) => {
+const Slide = ({ children, title }) => {
+  useStyles();
+
   const [darkMode, setDarkMode] = useState(!!localStorage.getItem("darkMode"));
   window.toggleDarkMode = () => {
     if (darkMode) {
@@ -15,12 +16,13 @@ export default ({ children, title }) => {
 
   return (
     <div
-      className={classNames(styles["custom-slide"], {
-        [styles["title-slide"]]: title,
-        "light-mode": !darkMode,
-      })}
+      className={`slide ${title ? "title-slide" : ""} ${
+        darkMode ? "" : "light-mode"
+      }`}
     >
       {children}
     </div>
   );
 };
+
+export default Slide;
