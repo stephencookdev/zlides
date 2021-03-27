@@ -16,7 +16,7 @@ const Presentation = ({ slides }) => {
       {Object.keys(slides)
         .sort((s1, s2) => s1.localeCompare(s2))
         .map((name) => (
-          <Slide component={slides[name]} key={name} />
+          <Slide component={slides[name].default || slides[name]} key={name} />
         ))}
     </RawPresentation>
   );
