@@ -34,13 +34,14 @@
     "react-dom": "^16.0"
   },
   "dependencies": {
-    "codemirror": "^5.60.0",
+    "codemirror": "^5.18.3",
     "react-presents": "^0.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-react": "^7.12.13",
     "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-url": "^6.0.0",
     "@storybook/addon-actions": "^6.2.0-rc.6",
     "@storybook/addon-essentials": "^6.2.0-rc.6",
     "@storybook/addon-links": "^6.2.0-rc.6",

@@ -11,7 +11,11 @@ const Slide2 = () => {
 };
 
 export const Basic = () => {
-  return <Presentation slides={{ Slide1, Slide2 }} />;
+  return (
+    <div style={{ height: "50vh", minHeight: "fit-content" }}>
+      <Presentation slides={{ Slide1, Slide2 }} />
+    </div>
+  );
 };
 
 export default {

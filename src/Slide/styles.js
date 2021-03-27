@@ -1,6 +1,6 @@
 import { createStylesHook } from "../helpers/styling";
 
-export const useStyles = createStylesHook`
+export const useStyles = createStylesHook(`
     .slide {
         background: #282a36;
         color: #f8f8f2;
@@ -148,8 +148,8 @@ export const useStyles = createStylesHook`
         opacity: 0.3;
     }
     @media (min-width: 856px) {
-        .slide + div button:disabled {
+        .slide + div {
             display: none;
         }
     }
-`;
+`);

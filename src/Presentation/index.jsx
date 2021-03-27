@@ -1,10 +1,13 @@
 import React from "react";
 import { Presentation as RawPresentation, Slide } from "react-presents";
 
+import { useStyles } from "./styles";
 import CursorHider from "../helpers/CursorHider";
 import CodeZoomHandler from "../helpers/CodeZoomHandler";
 
 const Presentation = ({ slides }) => {
+  useStyles();
+
   return (
     <RawPresentation disableTheme>
       <CursorHider />
