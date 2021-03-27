@@ -26,5 +26,11 @@ export default {
       limit: Infinity,
     }),
   ],
-  external: ["react", "react-dom", "react-presents", "codemirror"],
+  external: [
+    "react",
+    "react-dom",
+    "react-presents",
+    "codemirror",
+    "react-router-dom",
+  ],
 };
