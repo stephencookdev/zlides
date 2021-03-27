@@ -4,7 +4,7 @@ const resolve = require("rollup-plugin-node-resolve");
 const url = require("@rollup/plugin-url");
 
 export default {
-  input: "./index.jsx",
+  input: "./src/index.js",
   output: {
     file: "./dist/index.js",
     format: "cjs",

@@ -1,3 +1,6 @@
+require("codemirror/mode/css/css");
+require("codemirror/mode/htmlmixed/htmlmixed");
+
 import Presentation from "./Presentation";
 import Slide from "./Slide";
 import Code from "./Code";
