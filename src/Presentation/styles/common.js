@@ -56,17 +56,6 @@ export default `
         height: 100%;
     }
     
-    .boxShadowDiv {
-        width: 10vh;
-        height: 9.5vh;
-        padding-top: 0.5vh;
-        font-size: 3.5vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: black;
-    }
-    
     .me {
         font-size: 5vh;
         display: flex;
@@ -159,12 +148,12 @@ export default `
         top: 0.8em;
         text-align: left;
     }
-    quote::after {
+    .quote::after {
         content: "❞";
         text-align: right;
     }
-    quote::before,
-    quote::after {
+    .quote::before,
+    .quote::after {
         display: block;
         color: #f99e26;
         font-size: 300%;
