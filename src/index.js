@@ -6,5 +6,6 @@ import Slide from "./Slide";
 import Code from "./Code";
 import Step from "./Step";
 import HighlightList from "./HighlightList";
+import SandboxLink from "./SandboxLink";
 
-export { Presentation, Slide, Step, Code, HighlightList };
+export { Presentation, Slide, Step, Code, HighlightList, SandboxLink };
