@@ -21,6 +21,8 @@ const pickSandboxOptions = (obj, name) => {
 };
 
 const getSandboxes = (rawSandboxes) => {
+  if (!rawSandboxes) return [];
+
   const sandboxesOptions = [
     pickSandboxOptions(rawSandboxes),
     ...Object.keys(rawSandboxes).map((s) =>
