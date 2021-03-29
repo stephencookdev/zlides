@@ -35,7 +35,7 @@ const Styles = createGlobalStyle`
     }
 
     .slide hr {
-        border-top: 0;
+        border: 0;
         width: 50%;
         border-color: currentColor;
         border-style: solid;
