@@ -1,6 +1,6 @@
-import { createStylesHook } from "../helpers/styling";
+import { createGlobalStyle } from "styled-components";
 
-export const useStyles = createStylesHook(`
+const Styles = createGlobalStyle`
     .slide {
         background: #282a36;
         color: #f8f8f2;
@@ -152,4 +152,6 @@ export const useStyles = createStylesHook(`
             display: none;
         }
     }
-`);
+`;
+
+export default Styles;

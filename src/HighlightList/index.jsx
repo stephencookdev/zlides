@@ -1,11 +1,9 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Step from "../Step";
-import useStyles from "./styles";
+import { List, ListItem } from "./styles";
 
 const HighlightList = ({ items }) => {
-  useStyles();
-
   let itemsCount = 0;
   const cookedItems = items.map((it) => {
     const cookedIt = typeof it === "string" ? { text: it, count: 1 } : it;
@@ -21,7 +19,7 @@ const HighlightList = ({ items }) => {
   });
 
   return (
-    <ul className="highlightList-list">
+    <List>
       <Step index={0} maxIndex={itemsCount}>
         {""}
       </Step>
@@ -30,20 +28,18 @@ const HighlightList = ({ items }) => {
         render={({ match }) => {
           const n = parseInt(match.params.n);
           return cookedItems.map((item, i) => (
-            <li
+            <ListItem
               key={i}
-              className={
+              active={
                 n === 0 || (n >= item.startIndex + 1 && n < item.endIndex + 1)
-                  ? "highlightList-active"
-                  : ""
               }
             >
               {item.text}
-            </li>
+            </ListItem>
           ));
         }}
       />
-    </ul>
+    </List>
   );
 };
 

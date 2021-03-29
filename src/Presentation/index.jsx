@@ -2,7 +2,7 @@ import React from "react";
 import { Presentation as RawPresentation, Slide } from "react-presents";
 import { HashRouter, Route, Switch } from "react-router-dom";
 
-import { useStyles } from "./styles";
+import Styles from "./styles";
 import CursorHider from "../helpers/CursorHider";
 import CodeZoomHandler from "../helpers/CodeZoomHandler";
 import Sandbox from "../helpers/Sandbox";
@@ -39,10 +39,9 @@ const getSandboxes = (rawSandboxes) => {
 };
 
 const PresentationRoute = ({ slides }) => {
-  useStyles();
-
   return (
     <RawPresentation disableTheme>
+      <Styles />
       <CursorHider />
       <CodeZoomHandler />
 

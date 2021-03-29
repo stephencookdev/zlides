@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { useStyles } from "./styles";
+import Styles from "./styles";
 
 const Slide = ({ children, title }) => {
-  useStyles();
-
   const [darkMode, setDarkMode] = useState(!!localStorage.getItem("darkMode"));
   window.toggleDarkMode = () => {
     if (darkMode) {
@@ -20,6 +18,7 @@ const Slide = ({ children, title }) => {
         darkMode ? "" : "light-mode"
       }`}
     >
+      <Styles />
       {children}
     </div>
   );
