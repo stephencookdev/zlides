@@ -2,22 +2,18 @@ import { createGlobalStyle } from "styled-components";
 
 const Styles = createGlobalStyle`
     .slide {
-        background: #282a36;
-        color: #f8f8f2;
+        background: var(--slide-background);
+        color: var(--slide-foreground);
         width: 100%;
         height: 100%;
         line-height: 1.5;
-        padding: 2vh 2vh 8vh;
+        padding: var(--safe-padding) var(--safe-padding) var(--safe-padding-bottom);
         box-sizing: border-box;
         overflow: hidden;
     }
-
-    .slide.light-mode {
-        background: #5b5d69;
-    }
     
     .slide h1 {
-        border-bottom: 0.5vh solid currentColor;
+        border-bottom: 1vh solid var(--primary-color);
         padding-bottom: 1rem;
         margin: 1rem 0 3rem;
         font-size: 9vh;
@@ -44,13 +40,13 @@ const Styles = createGlobalStyle`
     }
 
     .slide code {
-        background: #222;
-        border: 1px solid #111;
+        background: var(--primary-dark);
+        border: 1px solid var(--primary-dark);
         padding: 4px 8px;
     }
 
     .slide a {
-        color: #f92672;
+        color: var(--primary-color);
         text-decoration: underline;
     }
 
@@ -73,59 +69,60 @@ const Styles = createGlobalStyle`
         width: 100%;
     }
     
-    .slide.light-mode.ReactCodeMirror {
+    .light-mode .slide .ReactCodeMirror {
+        box-shadow: 0 0 2px var(--primary-dark);
         border-radius: 0.5em;
         overflow: hidden;
     }
     
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror {
         background: #fff !important;
         color: #000 !important;
     }
     
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror div.CodeMirror-cursor {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror div.CodeMirror-cursor {
         border-left: 3px solid #000000;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .CodeMirror-activeline-background {
-        background: #0000001a;
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .CodeMirror-activeline-background {
+        background: #00001a;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .CodeMirror-selected {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .CodeMirror-selected {
         background: #bad6fd;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-string {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-string {
         color: #c41a16;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-number {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-number {
         color: null;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-keyword {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-keyword {
         color: #aa0d91;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-atom {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-atom {
         color: null;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-variable {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-variable {
         color: #000000;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-def {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-def {
         font-style: italic;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-comment {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-comment {
         color: #007400;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-variable-2 {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-variable-2 {
         color: #881280;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-property {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-property {
         color: null;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-operator {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .cm-operator {
         color: #aa0d91;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .CodeMirror-linenumber {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .CodeMirror-linenumber {
         color: #007400;
     }
-    .slide.light-mode .ReactCodeMirror .cm-s-reactpresents.CodeMirror .highlight {
+    .light-mode .slide .ReactCodeMirror .cm-s-reactpresents.CodeMirror .highlight {
         background: #e8f2ff;
     }
     
@@ -135,10 +132,9 @@ const Styles = createGlobalStyle`
         justify-content: center;
         flex-direction: column;
         text-align: center;
-    
-        h1 {
-            padding-right: 0 !important;
-        }
+    }
+    .title-slide h1 {
+        padding-right: 0 !important;
     }
     
     /**

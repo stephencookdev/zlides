@@ -21,8 +21,11 @@ export default `
     }
     
     .subtitle {
-        font-size: 5vh;
-        opacity: 0.5;
+        font-size: 3vh;
+        text-transform: uppercase;
+        letter-spacing: 1.5vh;
+        word-spacing: .5vh;
+        margin: 0;
     }
     
     .checkboxLabel {
@@ -88,10 +91,10 @@ export default `
         font-size: 10vh;
     }
     .hugeText .main {
-        color: #f99e26;
+        color: var(--primary-color-alt);
     }
     .hugeText .main:nth-of-type(2n) {
-        color: #f92672;
+        color: var(--primary-color);
     }
 
     .centerWithHeader {
@@ -133,10 +136,10 @@ export default `
         flex-direction: column;
     }
     .orange {
-        color: #f99e26;
+        color: var(--primary-color-alt);
     }
     .pink {
-        color: #f92672;
+        color: var(--primary-color);
     }
     
     .quote {
@@ -155,13 +158,13 @@ export default `
     .quote::before,
     .quote::after {
         display: block;
-        color: #f99e26;
+        color: var(--primary-color-alt);
         font-size: 300%;
     }
     .quoteHighlight {
         display: block;
         font-size: 200%;
-        color: #f92672;
+        color: var(--primary-color);
     }
     
     .nowrap {

@@ -21,7 +21,8 @@
     "url": "git+https://github.com/stephencookdev/zlides.git"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "themes.js"
   ],
   "bin": "./dist/cli/build.js",
   "author": "Stephen Cook",

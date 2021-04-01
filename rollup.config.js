@@ -3,12 +3,7 @@ const resolve = require("rollup-plugin-node-resolve");
 const url = require("@rollup/plugin-url");
 const hashbang = require("rollup-plugin-hashbang");
 
-const packageConfig = {
-  input: "./src/index.js",
-  output: {
-    file: "./dist/index.js",
-    format: "cjs",
-  },
+const packageConfigShared = {
   plugins: [
     babel({
       exclude: "node_modules/**",
@@ -27,7 +22,26 @@ const packageConfig = {
     "react-presents",
     "codemirror",
     "react-router-dom",
+    "styled-components",
   ],
+};
+
+const packageConfig = {
+  input: "./src/index.js",
+  output: {
+    file: "./dist/index.js",
+    format: "cjs",
+  },
+  ...packageConfigShared,
+};
+
+const themeConfig = {
+  input: "./src/themes/index.js",
+  output: {
+    file: "themes.js",
+    format: "cjs",
+  },
+  ...packageConfigShared,
 };
 
 const cliConfig = {
@@ -39,4 +53,4 @@ const cliConfig = {
   plugins: [hashbang()],
 };
 
-export default [packageConfig, cliConfig];
+export default [packageConfig, themeConfig, cliConfig];

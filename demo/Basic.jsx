@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Presentation, Slide, HighlightList, Step } from "../src";
+import { Presentation, Slide, HighlightList, Step, Code } from "../src";
 
 const Slide1 = () => {
   return <Slide>Hello</Slide>;
@@ -52,7 +52,7 @@ const Slide6 = () => {
             width="20vh"
             height="20vh"
             viewBox="0 0 24 24"
-            fill="currentColor"
+            fill="var(--primary-color)"
             stroke="none"
           >
             <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
@@ -83,11 +83,62 @@ const Slide6 = () => {
   );
 };
 
+const Slide7 = () => {
+  const searchSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 5">
+  <g
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width=".4"
+  >
+    <circle cx="3.1" cy="1.9" r="1.7" />
+    <path d="M1.9 3.2l-1.6 1.6" />
+  </g>
+</svg>`;
+
+  return (
+    <Code
+      value={searchSvg}
+      codeMirrorOptions={{ mode: "htmlmixed" }}
+      highlightLines={[[7, 8]]}
+    />
+  );
+};
+
+const Slide8 = () => {
+  const gsap = `const tl = new TimelineMax();
+
+tl.add("start");
+tl.staggerFromTo(
+  dots,
+  1.5,
+  { opacity: 0, scale: 0 },
+  {
+    opacity: 0.6,
+    scale: 1.2,
+    ease: Elastic.easeOut
+  },
+  0.05,
+  "start"
+)`;
+
+  return <Code value={gsap} codeMirrorOptions={{ mode: "javascript" }} />;
+};
+
 export const Basic = () => {
   return (
     <div style={{ height: "50vh", minHeight: "fit-content" }}>
       <Presentation
-        slides={{ Slide1, Slide2, Slide3, Slide4, Slide5, Slide6 }}
+        slides={{
+          Slide1,
+          Slide2,
+          Slide3,
+          Slide4,
+          Slide5,
+          Slide6,
+          Slide7,
+          Slide8,
+        }}
       />
     </div>
   );
