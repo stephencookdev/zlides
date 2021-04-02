@@ -2,8 +2,6 @@ export default ({ darkMode }) => ({
   safePadding: "2vh",
   safePaddingBottom: "8vh",
   primaryColor: "#f92672",
-  primaryColorLight: "#f92672",
-  primaryColorLight2: "#f92672",
   primaryColorAlt: "#f99e26",
   primaryDark: "#222",
   primaryLight: "#fff",
