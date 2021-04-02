@@ -22,6 +22,7 @@ const packageConfigShared = {
     "react-presents",
     "codemirror",
     "react-router-dom",
+    "react-helmet",
     "styled-components",
   ],
 };

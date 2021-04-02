@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Presentation as RawPresentation, Slide } from "react-presents";
 import { HashRouter, Route, Switch } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
 
 import Styles from "./styles";
@@ -40,7 +41,7 @@ const getSandboxes = (rawSandboxes) => {
   return sandboxes;
 };
 
-const PresentationRoute = ({ slides, theme }) => {
+const PresentationRoute = ({ slides, theme, title }) => {
   const [darkMode, setDarkMode] = useState(!!localStorage.getItem("darkMode"));
   window.toggleDarkMode = () => {
     if (darkMode) {
@@ -53,6 +54,9 @@ const PresentationRoute = ({ slides, theme }) => {
 
   return (
     <div className={darkMode ? "" : "light-mode"}>
+      <Helmet>
+        <title>{title || "Presentation using Zlides"}</title>
+      </Helmet>
       <ThemeProvider theme={theme({ darkMode })}>
         <RawPresentation disableTheme>
           <Styles />
