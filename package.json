@@ -45,9 +45,11 @@
     "ora": "^5.4.0",
     "parcel-bundler": "^1.12.5",
     "pretty-ms": "^7.0.1",
+    "react-helmet": "^6.1.0",
     "react-presents": "^0.8.1",
     "react-router-dom": "^4.3.1",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "tmp": "^0.0.33"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
