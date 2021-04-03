@@ -70,7 +70,17 @@ export default `
     }
     .twitter {
         font-size: 12vh;
-        margin-bottom: 6vh;
+    }
+    .twitter + .me {
+        margin-top: 6vh;
+    }
+
+    .highlight {
+        color: var(--primary-color);
+    }
+    hr.highlight {
+        border-top-width: 1vh;
+        margin: 4vh 0;
     }
     
     .largerFont {
@@ -87,7 +97,8 @@ export default `
     }
     .hugeText .main,
     .hugeText .pink,
-    .hugeText .orange {
+    .hugeText .orange,
+    .hugeText .highlight {
         font-size: 10vh;
     }
     .hugeText .main {

@@ -8,5 +8,15 @@ import Code from "./Code";
 import Step from "./Step";
 import HighlightList from "./HighlightList";
 import SandboxLink from "./SandboxLink";
+import Social from "./Social";
 
-export { present, Presentation, Slide, Step, Code, HighlightList, SandboxLink };
+export {
+  present,
+  Presentation,
+  Slide,
+  Step,
+  Code,
+  HighlightList,
+  SandboxLink,
+  Social,
+};
