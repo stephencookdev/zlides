@@ -1,4 +1,4 @@
-export default ({ darkMode }) => ({
+const baseGen = ({ darkMode }) => ({
   safePadding: "2vh",
   safePaddingBottom: "8vh",
   primaryColor: "#f92672",
@@ -8,3 +8,8 @@ export default ({ darkMode }) => ({
   slideForeground: "#f8f8f2",
   slideBackground: darkMode ? "#282a36" : "#5b5d69",
 });
+
+export default ({ darkMode }) => {
+  const base = baseGen({ darkMode });
+  return base;
+};
