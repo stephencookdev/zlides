@@ -11,11 +11,15 @@ import Sandbox from "../helpers/Sandbox";
 import { misdreavus } from "../themes";
 
 const pickSandboxOptions = (obj, name) => {
-  if (!obj.index || !obj.styles) return null;
+  if (!obj.index) return null;
 
   const extractionNeeded = typeof obj.index !== "string";
   const main = extractionNeeded ? Object.values(obj.index)[0] : obj.index;
-  const styles = extractionNeeded ? Object.values(obj.styles)[0] : obj.styles;
+  const styles = obj.styles
+    ? extractionNeeded
+      ? Object.values(obj.styles)[0]
+      : obj.styles
+    : null;
 
   return {
     route: name ? `/sandbox/${name.replace(/\s/g, "")}` : "/sandbox",
@@ -82,9 +86,9 @@ const Error404 = () => {
 };
 
 const Presentation = ({
-  slides,
   sandboxes: rawSandboxes,
   theme = misdreavus,
+  ...rest
 }) => {
   const sandboxes = getSandboxes(rawSandboxes);
 
@@ -94,7 +98,7 @@ const Presentation = ({
         <Route
           path="/([0-9]+/[0-9]+)?"
           exact
-          render={() => <PresentationRoute slides={slides} theme={theme} />}
+          render={() => <PresentationRoute theme={theme} {...rest} />}
         />
         {sandboxes.map((s) => (
           <Route exact key={s.route} path={s.route} render={s.render} />
