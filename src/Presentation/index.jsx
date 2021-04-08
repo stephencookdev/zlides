@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Presentation as RawPresentation, Slide } from "react-presents";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -8,6 +8,7 @@ import Styles from "./styles";
 import CursorHider from "../helpers/CursorHider";
 import CodeZoomHandler from "../helpers/CodeZoomHandler";
 import Sandbox from "../helpers/Sandbox";
+import { useGlobalShortcuts } from "../helpers/shortcuts";
 import { misdreavus } from "../themes";
 
 const pickSandboxOptions = (obj, name) => {
@@ -46,15 +47,7 @@ const getSandboxes = (rawSandboxes) => {
 };
 
 const PresentationRoute = ({ slides, theme, title }) => {
-  const [darkMode, setDarkMode] = useState(!!localStorage.getItem("darkMode"));
-  window.toggleDarkMode = () => {
-    if (darkMode) {
-      localStorage.removeItem("darkMode");
-    } else {
-      localStorage.setItem("darkMode", 1);
-    }
-    setDarkMode(!darkMode);
-  };
+  const { darkMode, hideSkippedSlides } = useGlobalShortcuts();
 
   return (
     <div className={darkMode ? "" : "light-mode"}>
@@ -69,11 +62,14 @@ const PresentationRoute = ({ slides, theme, title }) => {
 
           {Object.keys(slides)
             .sort((s1, s2) => s1.localeCompare(s2))
-            .map((name) => (
-              <Slide
-                component={slides[name].default || slides[name]}
-                key={name}
-              />
+            .map((name) => ({
+              name,
+              slide: slides[name].default || slides[name],
+              skip: !!slides[name].skip,
+            }))
+            .filter(({ skip }) => !hideSkippedSlides || !skip)
+            .map(({ name, slide }) => (
+              <Slide component={slide} key={name} />
             ))}
         </RawPresentation>
       </ThemeProvider>

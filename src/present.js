@@ -5,11 +5,6 @@ const present = (reactElement) => {
 
   ReactDOM.render(reactElement, mountPoint);
   document.dispatchEvent(new Event("post-react-render"));
-
-  console.log("Some dev shortcuts:");
-  console.table({
-    "toggleDarkMode()": "Change code samples between light/dark mode",
-  });
 };
 
 export default present;
