@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const useLocalStorageState = (key, initialValue) => {
   const transformToLocal = (x) => {
@@ -40,11 +40,13 @@ export const useGlobalShortcuts = () => {
   window.toggleHideSkippedSlides = () =>
     setHideSkippedSlides(!hideSkippedSlides);
 
-  console.log("Some dev shortcuts:");
-  console.table({
-    "toggleDarkMode()": `Current: ${darkMode}. Change code samples between light/dark mode`,
-    "toggleHideSkippedSlides()": `Current ${hideSkippedSlides}. Do/don't hide skipped slides`,
-  });
+  useEffect(() => {
+    console.log("Some dev shortcuts:");
+    console.table({
+      "toggleDarkMode()": `Current: ${darkMode}. Change code samples between light/dark mode`,
+      "toggleHideSkippedSlides()": `Current ${hideSkippedSlides}. Do/don't hide skipped slides`,
+    });
+  }, []);
 
   return { darkMode, hideSkippedSlides };
 };
