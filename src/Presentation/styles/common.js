@@ -117,6 +117,7 @@ export default `
     }
     .centerWithHeader img:first-of-type:last-of-type {
         height: 50vh;
+        object-fit: contain;
     }
 
     .spread {

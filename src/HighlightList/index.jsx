@@ -1,5 +1,4 @@
 import React from "react";
-import { Route } from "react-router-dom";
 import Step from "../Step";
 import { List, ListItem } from "./styles";
 
@@ -20,14 +19,9 @@ const HighlightList = ({ items }) => {
 
   return (
     <List>
-      <Step index={0} maxIndex={itemsCount}>
-        {""}
-      </Step>
-      <Route
-        path={`/(.*)/:n`}
-        render={({ match }) => {
-          const n = parseInt(match.params.n);
-          return cookedItems.map((item, i) => (
+      <Step step={`0-${itemsCount}`}>
+        {(n) =>
+          cookedItems.map((item, i) => (
             <ListItem
               key={i}
               active={
@@ -36,9 +30,9 @@ const HighlightList = ({ items }) => {
             >
               {item.text}
             </ListItem>
-          ));
-        }}
-      />
+          ))
+        }
+      </Step>
     </List>
   );
 };
